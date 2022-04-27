@@ -1,0 +1,22 @@
+QWidget {
+    color: #fff;
+    background: #000;
+}
+
+QSizeGrip {
+    background: rgba(0, 0, 0, 0);
+}
+
+QPushButton {
+    color: #FFF;
+    /* background: white; */
+}
+
+QPushButton:hover {
+    color: #fff;
+    background: rgb(54, 54, 54);
+}
+
+QLabel {
+    text-align: center;
+}
