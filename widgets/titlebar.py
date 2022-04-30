@@ -7,13 +7,21 @@ class TitleBar(QWidget):
         self.parent = parent
         self.layout = QHBoxLayout()
         self.layout.setContentsMargins(0,0,0,0)
+        self.layout.setSpacing(1)
         
         self.buttonh = 30
         self.buttonw = 40
 
-        self.title = QLabel("~File Name~")
+        # self.menuBar = QMenuBar(self)
+        # self.fileMenu = QMenu("&File", self)
+        # self.menuBar.addMenu(self.fileMenu)
+        # # self.editMenu = QMenu("&Edit", self)
+        # # self.menuBar.addMenu(self.editMenu)
+        # # self.aboutMenu = QMenu("&About", self)
+        # # self.menuBar.addMenu(self.aboutMenu)
+
+        self.title = QLabel("~Title~")
         self.title.setAlignment(Qt.AlignCenter)
-        self.title.setObjectName("titletext")
 
         self.btnminimize = QPushButton("-")
         self.btnminimize.clicked.connect(self.minimize)
@@ -27,13 +35,14 @@ class TitleBar(QWidget):
         self.btnclose = QPushButton("x")
         self.btnclose.clicked.connect(self.close)
         self.btnclose.setFixedSize(self.buttonw, self.buttonh)
+        self.btnclose.setObjectName("closeButton")
 
+        # self.layout.addWidget(self.menuBar)
         self.layout.addWidget(self.title)
         self.layout.addWidget(self.btnminimize)
         self.layout.addWidget(self.btnmaximize)
         self.layout.addWidget(self.btnclose)
         
-
         self.setLayout(self.layout)
 
         self.start = QPoint(0, 0)

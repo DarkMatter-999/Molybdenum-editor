@@ -1,6 +1,7 @@
 QWidget {
     color: #fff;
-    background: #000;
+    background: rgb(49, 49, 49);
+    /* border: 1px solid cyan; */
 }
 
 QSizeGrip {
@@ -9,14 +10,38 @@ QSizeGrip {
 
 QPushButton {
     color: #FFF;
-    /* background: white; */
+    border: 1px solid transparent;
+    font-size: 30px;
+    font: bold;
 }
 
 QPushButton:hover {
     color: #fff;
-    background: rgb(54, 54, 54);
+    background: rgb(124, 124, 124);
+    border: 1px solid  rgb(124, 124, 124);
+}
+
+QPushButton#closeButton:hover {
+    background: #9149f5;
+    border: 1px solid #9149f5;
+}
+
+QMenuBar {
+    font-size: 20px;
+}
+
+QMenuBar::item:selected {
+    color: #fff;
+    background:  rgb(124, 124, 124);
 }
 
 QLabel {
-    text-align: center;
+    font-size: 15px;
+}
+
+QPlainTextEdit {
+    margin: 0%;
+    padding: 0%;
+    border: transparent;
+    font-size: 25px;
 }

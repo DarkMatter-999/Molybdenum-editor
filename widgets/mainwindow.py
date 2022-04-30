@@ -1,18 +1,27 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint
 from widgets.titlebar import TitleBar
+from widgets.workspace import Workspace
 
 class MainWindow(QWidget):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.layout = QVBoxLayout()
         # Add Widgets here
-        self.layout.addWidget(TitleBar(self))
+        self.titlebar = TitleBar(self)
+        self.workspace = Workspace(self)
+
+        self.workspace.setSizePolicy(
+            QSizePolicy.Expanding,
+            QSizePolicy.Expanding
+        )
+
+        self.layout.addWidget(self.titlebar)
+        self.layout.addWidget(self.workspace)
 
 
         self.setLayout(self.layout)
         self.layout.setContentsMargins(0,0,0,0)
-        self.layout.addStretch(-1)
         self.setMinimumSize(800,500)
         self.setWindowFlags(Qt.FramelessWindowHint)
         
