@@ -39,9 +39,10 @@ QLabel {
     font-size: 15px;
 }
 
-QPlainTextEdit {
+QTextEdit {
     margin: 0%;
     padding: 0%;
     border: transparent;
     font-size: 25px;
+    background-color: rgb(80, 80, 80);
 }

@@ -9,13 +9,20 @@ class Workspace(QWidget):
         self.parent = parent
         self.layout = QHBoxLayout()
         self.layout.setContentsMargins(0,0,0,0)
-        self.layout.setSpacing(1)
+        self.layout.setSpacing(5)
 
-        self.editor = QPlainTextEdit()
+        self.editor = QTextEdit()
+        self.preview = QTextEdit()
+        self.sidebar = SideBar(self)
+        # self.preview.setDisabled(True)
+        self.editor.textChanged.connect(self.set_mdText)
         
-        self.layout.addWidget(SideBar(self))
+        self.layout.addWidget(self.sidebar)
         self.layout.addWidget(self.editor)
-        self.layout.addWidget(QPlainTextEdit())
+        self.layout.addWidget(self.preview)
 
 
         self.setLayout(self.layout)
+
+    def set_mdText(self):
+        self.preview.setMarkdown(self.editor.toPlainText())

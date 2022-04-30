@@ -20,7 +20,7 @@ class TitleBar(QWidget):
         # # self.aboutMenu = QMenu("&About", self)
         # # self.menuBar.addMenu(self.aboutMenu)
 
-        self.title = QLabel("~Title~")
+        self.title = QLabel("Molybdenum")
         self.title.setAlignment(Qt.AlignCenter)
 
         self.btnminimize = QPushButton("-")
@@ -83,3 +83,7 @@ class TitleBar(QWidget):
 
     def mouseReleaseEvent(self, QMouseEvent):
         self.pressing = False
+
+
+    def updatetitle(self, title):
+        self.title.setText(title + " - Molybdenum")
