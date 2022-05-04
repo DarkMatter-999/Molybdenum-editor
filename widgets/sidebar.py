@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QPoint
 import os
+from widgets.about import About
 
 class SideBar(QWidget):
     def __init__(self, parent):
@@ -32,6 +33,7 @@ class SideBar(QWidget):
         self.btnsaveas.setFixedSize(self.buttonw, self.buttonh)
 
         self.btnabout = QPushButton("A")
+        self.btnabout.clicked.connect(self.about)
         self.btnabout.setFixedSize(self.buttonw, self.buttonh)
 
         self.spacer = QSpacerItem(30, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -58,8 +60,7 @@ class SideBar(QWidget):
                     text = f.read()
  
             except Exception as e:
-                # show error using critical method
-                self.dialog_critical(str(e))
+                print("Error:", e)
             else:
                 self.path = path
 
@@ -93,7 +94,12 @@ class SideBar(QWidget):
                 f.write(text)
 
         except Exception as e:
-            self.dialog_critical(str(e))
+            print("Error:", e)
         else:
             self.path = path
             self.parent.parent.titlebar.updatetitle(os.path.basename(self.path) if self.path else "Untitled")
+
+    def about(self):
+        abt = About()
+        abt.setWindowFlags(Qt.FramelessWindowHint)
+        abt.exec()

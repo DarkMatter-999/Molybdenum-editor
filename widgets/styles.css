@@ -1,6 +1,6 @@
 QWidget {
-    color: #fff;
-    background: rgb(49, 49, 49);
+    color: #f8f8f2;
+    background: #282a36;
     /* border: 1px solid cyan; */
 }
 
@@ -9,21 +9,22 @@ QSizeGrip {
 }
 
 QPushButton {
-    color: #FFF;
+    color: #f8f8f2;
     border: 1px solid transparent;
+    border-radius: 5px;
     font-size: 30px;
     font: bold;
 }
 
 QPushButton:hover {
-    color: #fff;
-    background: rgb(124, 124, 124);
-    border: 1px solid  rgb(124, 124, 124);
+    color: #f8f8f2;
+    background: #8be9fd;
+    border: 1px solid  #8be9fd;
 }
 
 QPushButton#closeButton:hover {
-    background: #9149f5;
-    border: 1px solid #9149f5;
+    background: #bd93f9;
+    border: 1px solid #bd93f9;
 }
 
 QMenuBar {
@@ -31,18 +32,26 @@ QMenuBar {
 }
 
 QMenuBar::item:selected {
-    color: #fff;
-    background:  rgb(124, 124, 124);
+    color: #f8f8f2;
+    background:  #282a36;
 }
 
 QLabel {
     font-size: 15px;
+    background-color: #6272a4;
 }
 
 QTextEdit {
+    color: #f8f8f2;
     margin: 0%;
     padding: 0%;
     border: transparent;
+    border-radius: 10px;
     font-size: 25px;
-    background-color: rgb(80, 80, 80);
+    background-color: #343644;
+}
+
+QScrollBar:vertical {
+    width: 10px;
+    margin: 4px 0 4px 0;
 }

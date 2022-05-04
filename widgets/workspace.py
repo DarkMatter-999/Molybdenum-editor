@@ -14,7 +14,7 @@ class Workspace(QWidget):
         self.editor = QTextEdit()
         self.preview = QTextEdit()
         self.sidebar = SideBar(self)
-        # self.preview.setDisabled(True)
+        self.preview.setDisabled(True)
         self.editor.textChanged.connect(self.set_mdText)
         
         self.layout.addWidget(self.sidebar)

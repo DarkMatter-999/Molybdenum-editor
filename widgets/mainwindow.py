@@ -24,6 +24,7 @@ class MainWindow(QWidget):
         self.layout.setContentsMargins(0,0,0,0)
         self.setMinimumSize(800,500)
         self.setWindowFlags(Qt.FramelessWindowHint)
+        # self.setAttribute(Qt.WA_TranslucentBackground, True)
         
         self.gripSize = 8
         self.grips = []
